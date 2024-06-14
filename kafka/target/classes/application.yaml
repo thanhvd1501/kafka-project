@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: kafka
+  kafka:
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      acks: -1
+      retries: 1
+      properties:
+        enabled.idempotence: true
+        max.in.flight.requests.per.connection: 5
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: "jdbc:mysql://localhost:3306/kafka"
+    username: "kafka"
+    password: "kafka"
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
