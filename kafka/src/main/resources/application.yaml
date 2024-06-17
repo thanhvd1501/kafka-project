@@ -12,13 +12,14 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: "jdbc:mysql://localhost:3306/kafka"
-    username: "kafka"
-    password: "kafka"
+    username: "root"
+    password: "root"
   jpa:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
         show_sql: true
+        format_sql: true
     hibernate:
       ddl-auto: update
   main:
